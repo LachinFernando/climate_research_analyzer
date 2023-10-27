@@ -90,7 +90,7 @@ def retrieval_augmented_generation(query, database):
 def save_and_get_pdf_link(file_content):
     client = Client(apikey = os.environ["FILESTACK_KEY"])
 
-    new_filelink = client.upload(file_obj=io.BytesIO(file_content.read()))
+    new_filelink = client.upload(file_obj=file_content)
 
     url = new_filelink.url
     print(url)
